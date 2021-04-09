@@ -1,0 +1,9 @@
+
+
+<h1 style="text-align: center;">Employee Management System</h1>
+<br>
+<button pButton type="button" label="Add Employee" class="h-100 d-inline-block" style="margin: 10px;" (click)="addEmp()"></button>
+  <div *ngFor='let employee of filteredList'>
+      <app-employeedetail [employee]='employee' (refreshEmployeeList)="ListRef()">
+        </app-employeedetail>
+  </div>

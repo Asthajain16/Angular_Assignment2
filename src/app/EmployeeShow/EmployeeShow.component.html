@@ -1,0 +1,16 @@
+<p-card > <div style="background-color: rgb(192, 186, 186); width: 350px; border-radius: 10px;">
+  <div style>{{employee.firstname}} {{employee.lastname}}</div>
+  <div>Email: {{employee.emailid}}</div>
+  <div>Contact Number:{{employee.contactnumber}}</div>
+  <div>Address: {{employee.address}}</div>
+  <div>Username: {{employee.username}}</div>
+  <div>Password: {{employee.password}}</div>
+  <div>Gender: {{employee.gender}}</div>
+  <div>Qualification: {{employee.Qualification}}</div>
+  <div>Experience: {{employee.Experience}} <br></div>
+  <p-footer>
+      <button pButton type="button" label="Edit" icon="pi pi-check" style="margin-right: .25em" (click)="editEmp()"></button>
+      <button pButton type="button" label="Delete" icon="pi pi-times" class="ui-button-secondary" (click)="delEmp()"></button>
+  </p-footer>
+</div>
+</p-card>

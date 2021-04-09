@@ -1,0 +1,132 @@
+<h1 style="text-align: center;">Employee Management System</h1>
+<h2 style="text-align: center;">Fill Details Of Employee</h2>
+  <form #form='ngForm'>
+
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="firstname">First Name:<br> </label>
+      <input id="firstname" name="firstname" class="form-control" [(ngModel)]='firstname'
+      required #nameField="ngModel" (blur)="onBlur(nameField)"
+      [class.field-error]=" nameField.invalid">
+      <div [hidden]="nameField.valid ||nameField.untouched" class="alert alert-danger">
+        Enter first name
+      </div>
+    </div>
+    <br>
+   <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="lastname">Last Name:<br> </label>
+      <input id="lastname" name="lastname" class="form-control" [(ngModel)]='lastname'
+      required #lastnameField="ngModel" (blur)="onBlur(lastnameField)"
+      [class.field-error]="lastnameField.invalid">
+      <div [hidden]=" lastnameField.valid || lastnameField.untouched" class="alert alert-danger">
+        Enter last name
+      </div>
+    </div>
+    <br>
+    <div class="h-100 d-inline-block"style="margin: 10px;">
+      <label for="emailid">Email:<br> </label>
+      <input id="emailid" name="emailid" type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]='emailid'
+      required #emailField="ngModel" (blur)="onBlur(emailField)"
+      [class.field-error]=" emailField.invalid">
+      <div [hidden]=" emailField.valid ||emailField.untouched" class="alert alert-danger">
+        Enter valid Email Id
+      </div>
+    </div>
+    <br>
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="emailid">Contact Number:<br> </label>
+      <input id="contactnumber" name="contactnumber" type="tel" class="form-control" [(ngModel)]='contactnumber'
+      required #numberField="ngModel" (blur)="onBlur(numberField)"
+      [class.field-error]=" numberField.invalid">
+      <div [hidden]="numberField.valid ||numberField.untouched" class="alert alert-danger">
+        Enter Contact Number
+      </div>
+    </div>
+
+    <br>
+
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="address">Address:<br></label>
+      <textarea class="form-control" id="address" name="address" rows="3" [(ngModel)]="address"
+      required #addressField="ngModel" (blur)="onBlur(addressField)"
+      [class.field-error]=" addressField.invalid"></textarea>
+      <div [hidden]="addressField.valid ||addressField.untouched" class="alert alert-danger">
+        Enter Address
+      </div>
+
+    </div>
+
+    <br>
+
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="username">Username:<br> </label>
+      <input id="username" name="username" class="form-control" [(ngModel)]='username'
+      required #usernameField="ngModel" (blur)="onBlur(usernameField)"
+      [class.field-error]="usernameField.invalid">
+      <div [hidden]=" usernameField.valid||usernameField.untouched" class="alert alert-danger">
+        Enter Username
+      </div>
+    </div>
+
+    <br>
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="password">Password:<br> </label>
+      <input id="password" name="password" type="password" class="form-control" [(ngModel)]='password'
+      required #passwordField="ngModel" (blur)="onBlur(passwordField)"
+      [class.field-error]=" passwordField.invalid">
+      <div [hidden]=" passwordField.valid ||passwordField.untouched" class="alert alert-danger">
+        Enter Password
+      </div>
+    </div>
+
+
+
+    <br>
+    <p style="margin: 10px;"> Gender:</p>
+    <div style="margin: 10px;" >
+      <input id="1" name="gender" type="radio" value="male" [(ngModel)]='gender'>
+      <label for="gender"> &nbsp; Male <br> </label>
+      <br>
+
+      <input id="2" name="gender" type="radio" value="female"  [(ngModel)]='gender'>
+      <label for="gender">&nbsp; Female <br> </label>
+
+    </div>
+    <br>
+
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="Qualification">Qualification:</label>
+      <select class="form-control" name="Qualification" id="Qualification" [(ngModel)]="Qualification"
+      required #QualificationField="ngModel" (blur)="onBlur(QualificationField)"
+      [class.field-error]=" QualificationField.invalid">
+      <div [hidden]=" QualificationField.valid ||QualificationField.untouched" class="alert alert-danger"> </div>
+
+        <option value="" disabled selected>--Select--</option>
+        <option> B.Tech</option>
+        <option>BCA</option>
+        <option>M.Tech</option>
+        <option>MCA</option>
+      </select>
+    </div>
+    <br>
+
+    <div class="h-100 d-inline-block" style="margin: 10px;">
+      <label for="Experience">Experience:</label>
+      <select class="form-control" name="Experience" id="Experience" [(ngModel)]="Experience"
+      required #ExperienceField="ngModel" (blur)="onBlur(QualificationField)"
+      [class.field-error]=" ExperienceField.invalid">
+      <div [hidden]=" ExperienceField.valid ||ExperienceField.untouched" class="alert alert-danger"> </div>
+        <option value="" disabled selected>--Select--</option>
+        <option> 0-2 Years</option>
+        <option>3-5 Years</option>
+        <option>6-8 Years</option>
+        <option>Above 8 Years</option>
+
+      </select>
+    </div>
+    <br>
+
+
+    </form>
+    <button class="h-100 d-inline-block" style="margin: 10px;" pButton type="btn-default" label="Submit" icon="pi pi-check"[disabled]="form.invalid"  (click)="onSubmitEmployee()"></button>
+
+
